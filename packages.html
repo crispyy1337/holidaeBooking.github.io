@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Browse all Holidae holiday packages — beach, city, adventure and luxury breaks worldwide. Filter by type and find your perfect trip today." />
+  <title>All Packages — Holidae</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌴</text></svg>" />
+</head>
+<body>
+
+  <!-- SITE HEADER / NAVIGATION (shared across pages) -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Holidae — home">
+        <div class="logo__mark" aria-hidden="true">🌴</div>
+        <span class="logo__text">Holidae</span>
+      </a>
+      <nav class="nav__links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="packages.html" class="active">Packages</a>
+        <a href="maldives.html">Destinations</a>
+        <a href="index.html#why-holidae">About</a>
+        <a href="index.html#contact" class="nav__cta">Book Now</a>
+      </nav>
+      <button class="nav__toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav__mobile" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="packages.html">Packages</a>
+      <a href="maldives.html">Destinations</a>
+      <a href="index.html#why-holidae">About</a>
+      <a href="index.html#contact" class="nav__cta">Book Now</a>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- PAGE HERO — Packages listing -->
+    <section
+      class="page-hero"
+      aria-label="Browse all packages"
+      style="min-height: 45vh;"
+    >
+      <div
+        class="page-hero__bg"
+        style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80');"
+        role="img"
+        aria-label="Aerial view of mountains and glacial lakes"
+      ></div>
+      <div class="page-hero__overlay" aria-hidden="true"></div>
+
+      <div class="container page-hero__content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">All Packages</span>
+        </nav>
+        <p class="section-label" style="color:var(--gold-light);">All Destinations</p>
+        <h1 class="display-heading" style="font-size:clamp(2rem,5vw,3.5rem); margin-top:0.4rem;">
+          Browse Our Packages
+        </h1>
+        <p style="color:rgba(255,255,255,0.8); margin-top:0.75rem; max-width:46ch; font-size:1rem;">
+          Over 50 handpicked holidays across beaches, cities, mountains, and beyond.
+          Filter below to find yours.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- PACKAGES GRID + FILTER BAR -->
+    <section class="section" aria-labelledby="packages-grid-heading">
+      <div class="container">
+
+        <!-- Filter toolbar -->
+        <div
+          class="reveal"
+          style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:var(--space-sm); margin-bottom:var(--space-lg);"
+        >
+          <!-- Category filter buttons -->
+          <div class="filter-bar" role="group" aria-label="Filter packages by category">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="beach">🏖 Beach</button>
+            <button class="filter-btn" data-filter="city">🏙 City</button>
+            <button class="filter-btn" data-filter="adventure">🏔 Adventure</button>
+            <button class="filter-btn" data-filter="luxury">✨ Luxury</button>
+          </div>
+
+          <!-- Results count -->
+          <p style="font-size:0.85rem; color:var(--text-muted);" id="results-label">
+            Showing 8 packages
+          </p>
+        </div>
+
+        <!-- No results message -->
+        <p class="no-results" role="status" aria-live="polite">
+          No packages match that filter. Try a different category.
+        </p>
+
+        <!-- Package cards grid -->
+        <div class="grid-3 reveal-group" id="packages-grid" aria-label="Holiday packages">
+
+          <!-- Maldives (beach, luxury) -->
+          <article class="package-card" data-category="beach luxury" aria-label="Maldives Overwater Retreat">
+            <div class="package-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=80"
+                alt="Overwater bungalows in the Maldives"
+                loading="lazy"
+              />
+              <span class="package-card__badge">Best Seller</span>
+            </div>
+            <div class="package-card__body">
+              <p class="package-card__location">📍 Maldives</p>
+              <h2 class="package-card__title">Maldives Overwater Retreat</h2>
+              <div style="margin-bottom:0.5rem;">
+                <span class="tag tag--luxury">Luxury</span>
+                <span class="tag tag--beach" style="margin-left:0.25rem;">Beach</span>
+              </div>
+              <div class="package-card__meta">
+                <span>✈️ All-Inclusive</span>
+                <span>🌙 7 nights</span>
+              </div>
+              <div class="star-rating">
+                <div class="stars" aria-label="5 stars">★★★★★</div>
+                <span class="star-rating__count">(342)</span>
+              </div>
+              <div class="package-card__footer">
+                <div class="package-card__price">
+                  <span class="package-card__price-from">From</span>
+                  <span class="package-card__price-amount">£1,899</span>
+                  <span class="package-card__price-pp">per person</span>
+                </div>
+                <a href="maldives.html" class="btn btn-primary">View →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Santorini (beach, luxury) -->
+          <article class="package-card" data-category="beach luxury" aria-label="Santorini Sunset Escape">
+            <div class="package-card__image">
+              <img
+                src="santorini.jpg"
+                alt="White-domed buildings and blue sea in Santorini"
+                loading="lazy"
+              />
+              <span class="package-card__badge package-card__badge--gold">New</span>
+            </div>
+            <div class="package-card__body">
+              <p class="package-card__location">📍 Santorini, Greece</p>
+              <h2 class="package-card__title">Santorini Sunset Escape</h2>
+              <div style="margin-bottom:0.5rem;">
+                <span class="tag tag--beach">Beach</span>
+                <span class="tag tag--luxury" style="margin-left:0.25rem;">Luxury</span>
+              </div>
+              <div class="package-card__meta">
+                <span>✈️ B&amp;B</span>
+                <span>🌙 5 nights</span>
+              </div>
+              <div class="star-rating">
+                <div class="stars" aria-label="5 stars">★★★★★</div>
+                <span class="star-rating__count">(218)</span>
+              </div>
+              <div class="package-card__footer">
+                <div class="package-card__price">
+                  <span class="package-card__price-from">From</span>
+                  <span class="package-card__price-amount">£849</span>
+                  <span class="package-card__price-pp">per person</span>
+                </div>
+                <a href="#" class="btn btn-primary">View →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bali (beach, adventure) -->
+          <article class="package-card" data-category="beach adventure" aria-label="Bali Cultural Discovery">
+            <div class="package-card__image">
+              <img
+                src="bali.jpg"
+                alt="Lush green rice terraces in Bali, Indonesia"
+                loading="lazy"
+              />
+              <span class="package-card__badge" style="background:var(--gold);color:var(--navy);">Popular</span>
+            </div>
+            <div class="package-card__body">
+              <p class="package-card__location">📍 Bali, Indonesia</p>
+              <h2 class="package-card__title">Bali Cultural Discovery</h2>
+              <div style="margin-bottom:0.5rem;">
+                <span class="tag tag--adventure">Adventure</span>
+                <span class="tag tag--beach" style="margin-left:0.25rem;">Beach</span>
+              </div>
+              <div class="package-card__meta">
+                <span>✈️ Half Board</span>
+                <span>🌙 10 nights</span>
+              </div>
+              <div class="star-rating">
+                <div class="stars" aria-label="4 stars">★★★★☆</div>
+                <span class="star-rating__count">(187)</span>
+              </div>
+              <div class="package-card__footer">
+                <div class="package-card__price">
+                  <span class="package-card__price-from">From</span>
+                  <span class="package-card__price-amount">£1,199</span>
+                  <span class="package-card__price-pp">per person</span>
+                </div>
+                <a href="#" class="btn btn-primary">View →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tokyo (city) -->
+          <article class="package-card" data-category="city" aria-label="Tokyo City Explorer">
+            <div class="package-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80"
+                alt="Tokyo skyline at night with neon lights and busy streets"
+                loading="lazy"
+              />
+            </div>
+            <div class="package-card__body">
+              <p class="package-card__location">📍 Tokyo, Japan</p>
+              <h2 class="package-card__title">Tokyo City Explorer</h2>
+              <div style="margin-bottom:0.5rem;">
+                <span class="tag tag--city">City</span>
+              </div>
+              <div class="package-card__meta">
+                <span>✈️ Room Only</span>
+                <span>🌙 8 nights</span>
+              </div>
+              <div class="star-rating">
+                <div class="stars" aria-label="5 stars">★★★★★</div>
+                <span class="star-rating__count">(241)</span>
+              </div>
+              <div class="package-card__footer">
+                <div class="package-card__price">
+                  <span class="package-card__price-from">From</span>
+                  <span class="package-card__price-amount">£999</span>
+                  <span class="package-card__price-pp">per person</span>
+                </div>
+                <a href="#" class="btn btn-primary">View →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Iceland (adventure) -->
+          <article class="package-card" data-category="adventure" aria-label="Iceland Northern Lights">
+            <div class="package-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1476610182048-b716b8518aae?w=600&q=80"
+                alt="Green northern lights dancing over a snowy Iceland landscape"
+                loading="lazy"
+              />
+            </div>
+            <div class="package-card__body">
+              <p class="package-card__location">📍 Reykjavik, Iceland</p>
+              <h2 class="package-card__title">Iceland Northern Lights</h2>
+              <div style="margin-bottom:0.5rem;">
+                <span class="tag tag--adventure">Adventure</span>
+              </div>
+              <div class="package-card__meta">
+                <span>✈️ B&amp;B</span>
+                <span>🌙 5 nights</span>
+              </div>
+              <div class="star-rating">
+                <div class="stars" aria-label="5 stars">★★★★★</div>
+                <span class="star-rating__count">(156)</span>
+              </div>
+              <div class="package-card__footer">
+                <div class="package-card__price">
+                  <span class="package-card__price-from">From</span>
+                  <span class="package-card__price-amount">£1,299</span>
+                  <span class="package-card__price-pp">per person</span>
+                </div>
+                <a href="#" class="btn btn-primary">View →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Paris (city) -->
+          <article class="package-card" data-category="city luxury" aria-label="Paris Romantic Getaway">
+            <div class="package-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80"
+                alt="Aerial view of Paris with the Eiffel Tower in the distance"
+                loading="lazy"
+              />
+              <span class="package-card__badge" style="background:var(--coral);">Couples</span>
+            </div>
+            <div class="package-card__body">
+              <p class="package-card__location">📍 Paris, France</p>
+              <h2 class="package-card__title">Paris Romantic Getaway</h2>
+              <div style="margin-bottom:0.5rem;">
+                <span class="tag tag--city">City</span>
+                <span class="tag tag--luxury" style="margin-left:0.25rem;">Luxury</span>
+              </div>
+              <div class="package-card__meta">
+                <span>✈️ B&amp;B</span>
+                <span>🌙 4 nights</span>
+              </div>
+              <div class="star-rating">
+                <div class="stars" aria-label="5 stars">★★★★★</div>
+                <span class="star-rating__count">(312)</span>
+              </div>
+              <div class="package-card__footer">
+                <div class="package-card__price">
+                  <span class="package-card__price-from">From</span>
+                  <span class="package-card__price-amount">£599</span>
+                  <span class="package-card__price-pp">per person</span>
+                </div>
+                <a href="#" class="btn btn-primary">View →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Caribbean (beach, luxury) -->
+          <article class="package-card" data-category="beach luxury" aria-label="Caribbean Island Hop">
+            <div class="package-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=600&q=80"
+                alt="Crystal-clear turquoise water of the Caribbean Sea with coral"
+                loading="lazy"
+              />
+              <span class="package-card__badge package-card__badge--gold">Exclusive</span>
+            </div>
+            <div class="package-card__body">
+              <p class="package-card__location">📍 Caribbean</p>
+              <h2 class="package-card__title">Caribbean Island Hop</h2>
+              <div style="margin-bottom:0.5rem;">
+                <span class="tag tag--beach">Beach</span>
+                <span class="tag tag--luxury" style="margin-left:0.25rem;">Luxury</span>
+              </div>
+              <div class="package-card__meta">
+                <span>✈️ All-Inclusive</span>
+                <span>🌙 14 nights</span>
+              </div>
+              <div class="star-rating">
+                <div class="stars" aria-label="5 stars">★★★★★</div>
+                <span class="star-rating__count">(98)</span>
+              </div>
+              <div class="package-card__footer">
+                <div class="package-card__price">
+                  <span class="package-card__price-from">From</span>
+                  <span class="package-card__price-amount">£2,299</span>
+                  <span class="package-card__price-pp">per person</span>
+                </div>
+                <a href="#" class="btn btn-primary">View →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Dolomites (adventure) -->
+          <article class="package-card" data-category="adventure" aria-label="Dolomites Hiking Adventure">
+            <div class="package-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1472791108553-c9405341e398?w=600&q=80"
+                alt="Dramatic jagged peaks of the Dolomites in northern Italy"
+                loading="lazy"
+              />
+            </div>
+            <div class="package-card__body">
+              <p class="package-card__location">📍 Dolomites, Italy</p>
+              <h2 class="package-card__title">Dolomites Hiking Adventure</h2>
+              <div style="margin-bottom:0.5rem;">
+                <span class="tag tag--adventure">Adventure</span>
+              </div>
+              <div class="package-card__meta">
+                <span>✈️ Half Board</span>
+                <span>🌙 6 nights</span>
+              </div>
+              <div class="star-rating">
+                <div class="stars" aria-label="4 stars">★★★★☆</div>
+                <span class="star-rating__count">(143)</span>
+              </div>
+              <div class="package-card__footer">
+                <div class="package-card__price">
+                  <span class="package-card__price-from">From</span>
+                  <span class="package-card__price-amount">£879</span>
+                  <span class="package-card__price-pp">per person</span>
+                </div>
+                <a href="#" class="btn btn-primary">View →</a>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /packages-grid -->
+
+        <!-- Load more CTA (prototype: non-functional) -->
+        <div style="text-align:center; margin-top:var(--space-xl);" class="reveal">
+          <button class="btn btn-outline btn-lg" aria-label="Load more packages">
+            Load More Packages
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CTA BANNER — Push towards booking -->
+    <section class="section--dark section" aria-label="Book now call to action">
+      <div class="container" style="text-align:center; max-width:640px;">
+        <p class="section-label" style="color:var(--gold-light);">Can't Find What You're After?</p>
+        <h2 class="section-title" style="color:var(--white); margin-top:0.5rem;">
+          Our Travel Experts Can Build a Bespoke Package Just for You
+        </h2>
+        <p style="color:rgba(255,255,255,0.72); margin: 1rem auto 2rem; font-size:0.95rem;">
+          Call our team on <strong style="color:var(--gold-light);">0800 123 4567</strong> or drop us an email
+          and we'll craft your perfect holiday from scratch.
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:var(--space-sm); justify-content:center;">
+          <a href="tel:08001234567" class="btn btn-primary btn-lg">📞 Call Us</a>
+          <a href="mailto:hello@holidae.com" class="btn btn-secondary btn-lg">✉️ Email Us</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="main.js"></script>
+
+  <!-- Update the results count label when a filter is applied -->
+  <script>
+    // Enhance the results count when filters change
+    const filterBtns   = document.querySelectorAll('.filter-btn');
+    const cards        = document.querySelectorAll('.package-card[data-category]');
+    const resultsLabel = document.getElementById('results-label');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const selected = btn.dataset.filter;
+        let count = 0;
+
+        cards.forEach(card => {
+          const cat = card.dataset.category || '';
+          if (selected === 'all' || cat.includes(selected)) count++;
+        });
+
+        resultsLabel.textContent = `Showing ${count} package${count !== 1 ? 's' : ''}`;
+      });
+    });
+  </script>
+
+</body>
+</html>

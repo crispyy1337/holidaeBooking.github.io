@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Maldives Overwater Retreat — 7 nights all-inclusive in a private overwater villa. Crystal lagoons, house reef snorkelling, and world-class dining from £1,899 pp." />
+  <title>Maldives Overwater Retreat — Holidae</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌴</text></svg>" />
+
+  <!-- Extra page-specific styles for the two-column layout and video section -->
+  <style>
+    /* Tweak section spacing for the detail page */
+    .detail-section {
+      padding: var(--space-xl) 0;
+    }
+
+    /* Thin heading divider rule */
+    .section-rule {
+      width: 48px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin: 0.75rem 0 1.25rem;
+    }
+
+    /* Included / not included list items */
+    .included-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .included-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .included-list li .icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* Price breakdown table in booking card */
+    .price-breakdown {
+      width: 100%;
+      font-size: 0.85rem;
+      border-collapse: collapse;
+      margin: 0.75rem 0 1.25rem;
+    }
+
+    .price-breakdown td {
+      padding: 0.35rem 0;
+      color: var(--text-muted);
+    }
+
+    .price-breakdown td:last-child {
+      text-align: right;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .price-breakdown tr.total td {
+      border-top: 1px solid var(--cream-dark);
+      font-weight: 700;
+      color: var(--navy);
+      padding-top: 0.65rem;
+      font-size: 0.95rem;
+    }
+
+    /* Guest counter inline widget */
+    .guest-counter {
+      display: flex;
+      align-items: center;
+      border: 2px solid var(--cream-dark);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--cream);
+    }
+
+    .guest-counter button {
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+      color: var(--navy);
+      transition: background var(--trans-fast);
+    }
+
+    .guest-counter button:hover {
+      background: var(--cream-dark);
+    }
+
+    .guest-counter input {
+      flex: 1;
+      border: none;
+      text-align: center;
+      background: transparent;
+      font-size: 0.95rem;
+      color: var(--text);
+      outline: none;
+      padding: 0;
+      -moz-appearance: textfield;
+    }
+
+    .guest-counter input::-webkit-outer-spin-button,
+    .guest-counter input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SITE HEADER / NAVIGATION -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Holidae — home">
+        <div class="logo__mark" aria-hidden="true">🌴</div>
+        <span class="logo__text">Holidae</span>
+      </a>
+      <nav class="nav__links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="packages.html">Packages</a>
+        <a href="maldives.html" class="active">Destinations</a>
+        <a href="index.html#why-holidae">About</a>
+        <a href="#booking" class="nav__cta">Book Now</a>
+      </nav>
+      <button class="nav__toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav__mobile" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="packages.html">Packages</a>
+      <a href="maldives.html">Destinations</a>
+      <a href="index.html#why-holidae">About</a>
+      <a href="#booking" class="nav__cta">Book Now</a>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!--   PAGE HERO — Large, atmospheric hero specific to this package -->
+    <section
+      class="page-hero"
+      style="min-height: 70vh;"
+      aria-label="Maldives Overwater Retreat hero"
+    >
+      <div
+        class="page-hero__bg"
+        style="background-image: url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=1800&q=85');"
+        role="img"
+        aria-label="An overwater villa in the Maldives surrounded by turquoise lagoon at golden hour"
+      ></div>
+      <div class="page-hero__overlay" aria-hidden="true"></div>
+
+      <div class="container page-hero__content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">›</span>
+          <a href="packages.html">Packages</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Maldives</span>
+        </nav>
+
+        <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem;">
+          <span class="tag tag--luxury">Luxury</span>
+          <span class="tag tag--beach">Beach</span>
+        </div>
+
+        <h1 class="display-heading" style="font-size:clamp(2rem,5.5vw,4rem);">
+          Maldives Overwater Retreat
+        </h1>
+
+        <!-- Rating beneath heading -->
+        <div style="display:flex; align-items:center; gap:0.5rem; margin:0.75rem 0 1rem;">
+          <div class="stars" aria-label="5 star rating" style="font-size:1rem;">★★★★★</div>
+          <span style="color:rgba(255,255,255,0.9); font-size:0.9rem;">4.9 (342 reviews)</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!--   STICKY PACKAGE STRIP — At-a-glance info bar -->
+    <div class="package-strip" role="complementary" aria-label="Package summary">
+      <div class="container">
+
+        <div class="strip-stat">
+          <span class="strip-stat__icon" aria-hidden="true">✈️</span>
+          <div>
+            <p class="strip-stat__label">Board Basis</p>
+            <p class="strip-stat__value">All-Inclusive</p>
+          </div>
+        </div>
+
+        <div class="strip-stat">
+          <span class="strip-stat__icon" aria-hidden="true">🌙</span>
+          <div>
+            <p class="strip-stat__label">Duration</p>
+            <p class="strip-stat__value">7 Nights</p>
+          </div>
+        </div>
+
+        <div class="strip-stat">
+          <span class="strip-stat__icon" aria-hidden="true">🏨</span>
+          <div>
+            <p class="strip-stat__label">Hotel</p>
+            <p class="strip-stat__value">5★ Overwater Villa</p>
+          </div>
+        </div>
+
+        <div class="strip-stat">
+          <span class="strip-stat__icon" aria-hidden="true">🛡️</span>
+          <div>
+            <p class="strip-stat__label">Protection</p>
+            <p class="strip-stat__value">ATOL Protected</p>
+          </div>
+        </div>
+
+        <!-- Mobile: show price in strip; hidden on desktop (price is in booking card) -->
+        <div class="strip-stat" style="display:none;" id="strip-price">
+          <div>
+            <p class="strip-stat__label">From</p>
+            <p class="strip-stat__value" style="font-size:1.2rem; color:var(--coral);">£1,899 pp</p>
+          </div>
+        </div>
+
+        <!-- Book now jumps to anchor on mobile -->
+        <a href="#booking" class="btn btn-coral" style="display:none;" id="strip-book-btn">Book Now</a>
+
+      </div>
+    </div>
+
+    <!-- Show price + button on mobile in the strip -->
+    <script>
+      if (window.innerWidth < 1024) {
+        document.getElementById('strip-price').style.display = '';
+        document.getElementById('strip-book-btn').style.display = '';
+      }
+    </script>
+
+
+    <!--   MAIN CONTENT + BOOKING SIDEBAR -->
+    <div class="section">
+      <div class="container">
+        <div class="package-detail-layout">
+
+          <!-- ---- LEFT COLUMN: All descriptive content ---- -->
+          <div>
+
+            <!-- Photo Gallery -->
+            <section class="detail-section" style="padding-top:0;" aria-labelledby="gallery-heading">
+              <h2 class="section-title" id="gallery-heading" style="font-size:1.4rem;">Photo Gallery</h2>
+              <div class="section-rule" aria-hidden="true"></div>
+
+              <!-- Click any image to open the lightbox (wired in main.js) -->
+              <div class="gallery" role="list" aria-label="Package photo gallery">
+
+                <!-- Main large image -->
+                <div class="gallery__item gallery__main" role="listitem">
+                  <img
+                    src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=900&q=80"
+                    alt="Overwater villas at sunset in the Maldives"
+                    loading="lazy"
+                  />
+                </div>
+
+                <!-- Smaller gallery images -->
+                <div class="gallery__item" role="listitem">
+                  <img
+                    src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=400&q=80"
+                    alt="Crystal clear lagoon with tropical fish visible through the water"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div class="gallery__item" role="listitem">
+                  <img
+                    src="photo-1557750505-e7b4d1c40410.jpg"
+                    alt="Interior of a luxurious overwater villa with an infinity pool"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div class="gallery__item" role="listitem">
+                  <img
+                    src="https://images.unsplash.com/photo-1548574505-5e239809ee19?w=400&q=80"
+                    alt="Underwater view of vibrant coral reef with tropical fish"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div class="gallery__item" role="listitem">
+                  <img
+                    src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?w=400&q=80"
+                    alt="Romantic dining table set on a sandbank surrounded by ocean"
+                    loading="lazy"
+                  />
+                </div>
+
+              </div>
+
+              <p style="font-size:0.78rem; color:var(--text-muted); margin-top:0.5rem;">
+                Click any photo to view full size.
+              </p>
+            </section>
+
+
+            <!-- Package Highlights -->
+            <section class="detail-section" aria-labelledby="highlights-heading">
+              <h2 class="section-title" id="highlights-heading" style="font-size:1.4rem;">Package Highlights</h2>
+              <div class="section-rule" aria-hidden="true"></div>
+              <ul class="highlights-list reveal-group">
+                <li class="highlight-item">
+                  <span class="highlight-item__icon" aria-hidden="true">🏝️</span>
+                  <p class="highlight-item__text">
+                    <strong>Private overwater villa</strong> with a glass floor panel, direct lagoon access,
+                    and a sundeck with hammock
+                  </p>
+                </li>
+                <li class="highlight-item">
+                  <span class="highlight-item__icon" aria-hidden="true">🤿</span>
+                  <p class="highlight-item__text">
+                    <strong>Daily snorkelling excursion</strong> on the house reef - spot rays, turtles,
+                    and thousands of tropical fish
+                  </p>
+                </li>
+                <li class="highlight-item">
+                  <span class="highlight-item__icon" aria-hidden="true">🍽️</span>
+                  <p class="highlight-item__text">
+                    <strong>All-inclusive dining</strong> at four on-site restaurants, including an
+                    overwater seafood grill and a Maldivian tasting menu
+                  </p>
+                </li>
+                <li class="highlight-item">
+                  <span class="highlight-item__icon" aria-hidden="true">💆</span>
+                  <p class="highlight-item__text">
+                    <strong>Daily spa credit</strong> worth £40, redeemable at the overwater spa
+                    with ocean-facing treatment rooms
+                  </p>
+                </li>
+                <li class="highlight-item">
+                  <span class="highlight-item__icon" aria-hidden="true">🌅</span>
+                  <p class="highlight-item__text">
+                    <strong>Sunset dolphin cruise</strong> included - an unforgettable one-hour
+                    guided boat trip as the sky turns coral and gold
+                  </p>
+                </li>
+                <li class="highlight-item">
+                  <span class="highlight-item__icon" aria-hidden="true">✈️</span>
+                  <p class="highlight-item__text">
+                    <strong>Return flights from London Heathrow</strong> with 23kg checked luggage included
+                    on all Holidae bookings
+                  </p>
+                </li>
+              </ul>
+            </section>
+
+            <!-- What's included -->
+            <section class="detail-section" aria-labelledby="included-heading">
+              <div class="grid-2">
+
+                <!-- Included -->
+                <div>
+                  <h2 class="section-title" id="included-heading" style="font-size:1.2rem;">What's Included</h2>
+                  <div class="section-rule" aria-hidden="true"></div>
+                  <ul class="included-list" aria-label="Items included in this package">
+                    <li><span class="icon" aria-hidden="true">✅</span> Return flights (LHR)</li>
+                    <li><span class="icon" aria-hidden="true">✅</span> 7 nights in an overwater villa</li>
+                    <li><span class="icon" aria-hidden="true">✅</span> All-inclusive meals &amp; drinks</li>
+                    <li><span class="icon" aria-hidden="true">✅</span> Speedboat transfers to resort</li>
+                    <li><span class="icon" aria-hidden="true">✅</span> Sunset dolphin cruise</li>
+                    <li><span class="icon" aria-hidden="true">✅</span> Daily guided snorkel session</li>
+                    <li><span class="icon" aria-hidden="true">✅</span> £40/day spa credit</li>
+                    <li><span class="icon" aria-hidden="true">✅</span> Watersports equipment hire</li>
+                    <li><span class="icon" aria-hidden="true">✅</span> Holidae concierge service</li>
+                    <li><span class="icon" aria-hidden="true">✅</span> ATOL protection</li>
+                  </ul>
+                </div>
+
+                <!-- Not included -->
+                <div>
+                  <h2 class="section-title" style="font-size:1.2rem;">Not Included</h2>
+                  <div class="section-rule" aria-hidden="true"></div>
+                  <ul class="included-list" aria-label="Items not included in this package">
+                    <li><span class="icon" aria-hidden="true">❌</span> Travel insurance</li>
+                    <li><span class="icon" aria-hidden="true">❌</span> Scuba diving (introductory or certified)</li>
+                    <li><span class="icon" aria-hidden="true">❌</span> Additional spa treatments above credit</li>
+                    <li><span class="icon" aria-hidden="true">❌</span> Gratuities</li>
+                    <li><span class="icon" aria-hidden="true">❌</span> Personal shopping &amp; excursions</li>
+                  </ul>
+                  <p style="font-size:0.8rem; color:var(--text-muted); margin-top:1rem;">
+                    We recommend adding travel insurance at checkout — from just £29 pp.
+                  </p>
+                </div>
+
+              </div>
+            </section>
+
+          </div><!-- /left column -->
+
+
+          <!-- ---- RIGHT COLUMN: Sticky booking card ---- -->
+          <aside id="booking" aria-label="Booking form">
+            <div class="booking-card">
+
+              <!-- Price display -->
+              <div class="booking-card__price-badge">
+                <p class="booking-card__from">From</p>
+                <p class="booking-card__amount">£1,899</p>
+                <p class="booking-card__pp">per person</p>
+              </div>
+
+              <!-- Price breakdown table -->
+              <table class="price-breakdown" aria-label="Price breakdown">
+                <tbody>
+                  <tr>
+                    <td>Flights (return LHR)</td>
+                    <td>£640</td>
+                  </tr>
+                  <tr>
+                    <td>7 nights villa</td>
+                    <td>£1,120</td>
+                  </tr>
+                  <tr>
+                    <td>All-inclusive board</td>
+                    <td>£139</td>
+                  </tr>
+                  <tr class="total">
+                    <td>Total per person</td>
+                    <td>£1,899</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- Booking form -->
+              <form class="booking-form" novalidate aria-label="Reserve your Maldives Retreat">
+
+                <!-- Departure date -->
+                <div class="form-group">
+                  <label for="bk-date">Departure Date</label>
+                  <input
+                    type="date"
+                    id="bk-date"
+                    required
+                    aria-required="true"
+                    aria-describedby="bk-date-hint"
+                  />
+                  <p id="bk-date-hint" style="font-size:0.7rem; color:var(--text-muted); margin-top:0.25rem;">
+                    Available: Oct 2025 – Sep 2026
+                  </p>
+                </div>
+
+                <!-- Number of guests (custom counter) -->
+                <div class="form-group">
+                  <label for="bk-guests">Guests</label>
+                  <div class="guest-counter" role="group" aria-label="Guest count">
+                    <button type="button" data-action="minus" aria-label="Remove a guest">−</button>
+                    <input
+                      type="number"
+                      id="bk-guests"
+                      name="guests"
+                      value="2"
+                      min="1"
+                      max="8"
+                      required
+                      aria-required="true"
+                      aria-label="Number of guests"
+                    />
+                    <button type="button" data-action="plus" aria-label="Add a guest">+</button>
+                  </div>
+                </div>
+
+                <!-- Room type -->
+                <div class="form-group">
+                  <label for="bk-room">Room Type</label>
+                  <select id="bk-room" required aria-required="true">
+                    <option value="">Select a room type</option>
+                    <option value="sunset">Sunset Overwater Villa (+£0)</option>
+                    <option value="reef">Reef Water Villa (+£150 pp)</option>
+                    <option value="ocean">Ocean Pool Suite (+£350 pp)</option>
+                  </select>
+                </div>
+
+                <!-- Contact details -->
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="bk-first">First Name</label>
+                    <input type="text" id="bk-first" required aria-required="true" placeholder="e.g. Jane" />
+                  </div>
+                  <div class="form-group">
+                    <label for="bk-last">Last Name</label>
+                    <input type="text" id="bk-last" required aria-required="true" placeholder="e.g. Smith" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="bk-email">Email Address</label>
+                  <input type="email" id="bk-email" required aria-required="true" placeholder="you@example.com" />
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-coral btn-lg" style="width:100%; justify-content:center; margin-top:0.5rem;">
+                  Reserve This Holiday
+                </button>
+
+              <!-- Trust signals -->
+              <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:1.25rem; font-size:0.78rem; color:var(--text-muted);">
+                <p>🔒 Secure &amp; encrypted booking</p>
+                <p>🛡️ ATOL &amp; ABTA protected</p>
+                <p>💬 Free cancellation within 24 hours</p>
+              </div>
+
+            </div><!-- /booking-card -->
+          </aside>
+
+        </div><!-- /package-detail-layout -->
+      </div>
+    </div>
+
+
+    <!--   "YOU MIGHT ALSO LIKE" — Related packages carousel -->
+    <section class="section section--cream" aria-labelledby="related-heading">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom:var(--space-lg);">
+          <p class="section-label">Keep Exploring</p>
+          <h2 class="section-title" id="related-heading">You Might Also Love</h2>
+        </div>
+
+        <div class="grid-3 reveal-group">
+
+          <!-- Related: Bali -->
+          <article class="package-card" aria-label="Bali Cultural Discovery">
+            <div class="package-card__image">
+              <img
+                src="bali.jpg"
+                alt="Green rice terraces in Bali"
+                loading="lazy"
+              />
+            </div>
+            <div class="package-card__body">
+              <p class="package-card__location">📍 Bali, Indonesia</p>
+              <h3 class="package-card__title">Bali Cultural Discovery</h3>
+              <div class="package-card__footer">
+                <div class="package-card__price">
+                  <span class="package-card__price-from">From</span>
+                  <span class="package-card__price-amount">£1,199</span>
+                  <span class="package-card__price-pp">per person</span>
+                </div>
+                <a href="packages.html" class="btn btn-primary">View →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Related: Caribbean -->
+          <article class="package-card" aria-label="Caribbean Island Hop">
+            <div class="package-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=600&q=80"
+                alt="Turquoise Caribbean sea with white sand beach"
+                loading="lazy"
+              />
+            </div>
+            <div class="package-card__body">
+              <p class="package-card__location">📍 Caribbean</p>
+              <h3 class="package-card__title">Caribbean Island Hop</h3>
+              <div class="package-card__footer">
+                <div class="package-card__price">
+                  <span class="package-card__price-from">From</span>
+                  <span class="package-card__price-amount">£2,299</span>
+                  <span class="package-card__price-pp">per person</span>
+                </div>
+                <a href="packages.html" class="btn btn-primary">View →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Related: Santorini -->
+          <article class="package-card" aria-label="Santorini Sunset Escape">
+            <div class="package-card__image">
+              <img
+                src="santorini.jpg  "
+                alt="Iconic white buildings with blue domes in Santorini"
+                loading="lazy"
+              />
+            </div>
+            <div class="package-card__body">
+              <p class="package-card__location">📍 Santorini, Greece</p>
+              <h3 class="package-card__title">Santorini Sunset Escape</h3>
+              <div class="package-card__footer">
+                <div class="package-card__price">
+                  <span class="package-card__price-from">From</span>
+                  <span class="package-card__price-amount">£849</span>
+                  <span class="package-card__price-pp">per person</span>
+                </div>
+                <a href="packages.html" class="btn btn-primary">View →</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- LIGHTBOX — Full-screen image overlay (wired by main.js) -->
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Photo lightbox">
+    <button class="lightbox__close" aria-label="Close photo lightbox">✕</button>
+    <img src="" alt="" />
+  </div>
+
+  <script src="main.js"></script>
+
+</body>
+</html>

@@ -1,45 +1,455 @@
 <!DOCTYPE html>
-<html lang="en">   
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lists</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Holidae — Affordable holiday packages to the world's most beautiful destinations. Browse, compare, and book your dream holiday today." />
+  <title>Holidae — Dream Holidays, Real Prices</title>
+  <link rel="stylesheet" href="styles.css" />
+ 
+  <!-- Favicon placeholder (emoji-based for prototype) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌴</text></svg>" />
 </head>
-<style>
-        p { color:green; }
-    </style>
 <body>
-    <h1> Lists in HTML </h1>
-    <p> There are three types of lists in HTML: ordered lists, unordered lists, and definition lists. </p>
-
-    <h2> Ordered List </h2>
-    <p> An ordered list is a list of items that are numbered. </p>
-    <ol>
-        <li> First item </li>
-        <li> Second item </li>
-        <li> Third item </li>
-    </ol>
-
-    <h2> Unordered List </h2>
-    <p> An unordered list is a list of items that are not numbered. </p>
-    <ul>
-        <li> First item </li>
-        <li> Second item </li>
-        <li> Third item </li>
-    </ul>
-
-    <h2> Definition List </h2>
-    <p> A definition list is a list of terms and their definitions. </p>
-    <dl>
-        <dt> Term 1 </dt>
-        <dd> Definition of term 1. </dd>
-        <dt> Term 2 </dt>
-        <dd> Definition of term 2. </dd>     
-        <dt> Term 3 </dt>
-        <dd> Definition of term 3. </dd>
-    </dl>
-    
-    <p>&copy; Lists in HTML</p>
-
-    <a href="https://www.youtube.com">Visit YouTube</a>
+ 
+  <!-- SITE HEADER / NAVIGATION -->
+  <header class="site-header" role="banner">
+    <div class="container">
+ 
+      <!-- Brand logo -->
+      <a href="index.html" class="logo" aria-label="Holidae — home">
+        <div class="logo__mark" aria-hidden="true">🌴</div>
+        <span class="logo__text">Holidae</span>
+      </a>
+ 
+      <!-- Desktop navigation -->
+      <nav class="nav__links" aria-label="Main navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="packages.html">Packages</a>
+        <a href="maldives.html">Destinations</a>
+        <a href="#why-holidae">About</a>
+        <a href="#contact" class="nav__cta">Book Now</a>
+      </nav>
+ 
+      <!-- Mobile hamburger toggle -->
+      <button class="nav__toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+ 
+    <!-- Full-screen mobile navigation overlay -->
+    <nav class="nav__mobile" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="packages.html">Packages</a>
+      <a href="maldives.html">Destinations</a>
+      <a href="#why-holidae">About</a>
+      <a href="#contact" class="nav__cta">Book Now</a>
+    </nav>
+  </header>
+ 
+ 
+  <main>
+ 
+    <!-- HERO SECTION
+         Full-viewport hero with animated headline and CTA.
+         Background image: tropical beach (Unsplash) -->
+    <section class="hero" aria-label="Welcome to Holidae">
+ 
+      <!-- Hero background image with subtle zoom animation -->
+      <div
+        class="hero__bg"
+        style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80');"
+        role="img"
+        aria-label="A stunning tropical beach with crystal-clear turquoise water"
+      ></div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+ 
+      <div class="container">
+        <div class="hero__content">
+          <p class="hero__eyebrow">✦ Your Next Adventure Awaits</p>
+          <h1 class="hero__title display-heading">
+            Life is Short.<br />
+            Travel <em>Somewhere Beautiful.</em>
+          </h1>
+          <p class="hero__desc">
+            Discover handpicked holiday packages to over 50 destinations worldwide.
+            Premium experiences at prices that don't require a second mortgage.
+          </p>
+          <div class="hero__actions">
+            <a href="packages.html" class="btn btn-primary btn-lg">Browse Packages</a>
+            <a href="maldives.html" class="btn btn-secondary btn-lg">View Destinations</a>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Scroll-down indicator -->
+      <div class="hero__scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+ 
+ 
+    <!-- QUICK SEARCH BAR
+         Floats over the hero/content transition. -->
+    <div class="section" style="padding-top: 0; padding-bottom: var(--space-xl);">
+      <div class="container">
+        <div class="search-bar reveal" role="search">
+ 
+          <!-- Destination selector -->
+          <div class="search-bar__field">
+            <label for="dest-select">Destination</label>
+            <select id="dest-select" aria-label="Choose destination">
+              <option value="">Anywhere</option>
+              <option value="beach">🏖️ Beach Escapes</option>
+              <option value="city">🏙️ City Breaks</option>
+              <option value="adventure">🏔️ Adventure</option>
+              <option value="luxury">✨ Luxury</option>
+            </select>
+          </div>
+ 
+          <!-- Departure date -->
+          <div class="search-bar__field">
+            <label for="depart-date">Departure</label>
+            <input type="date" id="depart-date" aria-label="Departure date" />
+          </div>
+ 
+          <!-- Number of guests (desktop only) -->
+          <div class="search-bar__field" style="display:none" id="guest-field">
+            <label for="guests">Guests</label>
+            <input type="number" id="guests" value="2" min="1" max="20" aria-label="Number of guests" />
+          </div>
+ 
+          <!-- Search button -->
+          <button class="btn btn-primary" aria-label="Search for holidays">
+            🔍 Search
+          </button>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Show guest field on wider screens via inline script -->
+    <script>
+      if (window.innerWidth >= 1024) {
+        document.getElementById('guest-field').style.display = '';
+      }
+    </script>
+ 
+ 
+    <!-- WHY HOLIDAE — Feature cards section -->
+    <section class="section section--cream" id="why-holidae" aria-labelledby="why-heading">
+      <div class="container">
+ 
+        <!-- Section header -->
+        <div class="text-center reveal" style="margin-bottom: var(--space-lg);">
+          <p class="section-label">Why Choose Us</p>
+          <h2 class="section-title">Holidays Made <em style="font-style:italic; color:var(--coral)">Easy</em></h2>
+          <p class="lead" style="margin: 0.75rem auto 0;">
+            We do the hard work so you don't have to. From browsing to boarding, we've
+            got every step of your journey covered.
+          </p>
+        </div>
+ 
+        <!-- 3 feature cards -->
+        <div class="grid-3 reveal-group">
+ 
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">💰</div>
+            <h3 class="feature-card__title">Best Price Guarantee</h3>
+            <p class="feature-card__desc">
+              We work directly with hotels and airlines to negotiate the lowest rates.
+              Find it cheaper? We'll match it, no questions asked.
+            </p>
+          </article>
+ 
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">🛡️</div>
+            <h3 class="feature-card__title">Fully ATOL Protected</h3>
+            <p class="feature-card__desc">
+              Every package we sell is fully ATOL protected, giving you financial
+              security and peace of mind before you even pack your bags.
+            </p>
+          </article>
+ 
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">🌟</div>
+            <h3 class="feature-card__title">Expert Travel Advice</h3>
+            <p class="feature-card__desc">
+              Our team of travel specialists have visited every destination we sell.
+              Real advice from real people who love to travel.
+            </p>
+          </article>
+ 
+        </div>
+ 
+        <!-- Trust stats row -->
+        <div
+          class="reveal"
+          style="
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-lg);
+            justify-content: center;
+            margin-top: var(--space-xl);
+          "
+        >
+          <div style="text-align:center;">
+            <p style="font-family:var(--font-display); font-size:2.5rem; font-weight:700; color:var(--navy);">50k+</p>
+            <p style="font-size:0.85rem; color:var(--text-muted);">Happy Travellers</p>
+          </div>
+          <div style="text-align:center;">
+            <p style="font-family:var(--font-display); font-size:2.5rem; font-weight:700; color:var(--navy);">50+</p>
+            <p style="font-size:0.85rem; color:var(--text-muted);">Destinations</p>
+          </div>
+          <div style="text-align:center;">
+            <p style="font-family:var(--font-display); font-size:2.5rem; font-weight:700; color:var(--navy);">4.9★</p>
+            <p style="font-size:0.85rem; color:var(--text-muted);">Average Rating</p>
+          </div>
+          <div style="text-align:center;">
+            <p style="font-family:var(--font-display); font-size:2.5rem; font-weight:700; color:var(--navy);">12yr</p>
+            <p style="font-size:0.85rem; color:var(--text-muted);">In Business</p>
+          </div>
+        </div>
+ 
+      </div>
+    </section>
+ 
+ 
+    <!-- FEATURED PACKAGES
+         Three highlighted packages with cards linking to detail. -->
+    <section class="section" id="packages" aria-labelledby="packages-heading">
+      <div class="container">
+ 
+        <!-- Section header -->
+        <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:var(--space-sm); margin-bottom:var(--space-lg);">
+          <div class="reveal">
+            <p class="section-label">This Season's Picks</p>
+            <h2 class="section-title">Featured Packages</h2>
+          </div>
+          <a href="packages.html" class="btn btn-outline reveal" style="margin-bottom:0.4rem;">
+            View All Packages →
+          </a>
+        </div>
+ 
+        <!-- Package card grid -->
+        <div class="grid-3 reveal-group">
+ 
+          <!-- Package 1: Maldives -->
+          <article class="package-card" aria-label="Maldives Overwater Retreat package">
+            <div class="package-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=80"
+                alt="Overwater bungalows in the Maldives at golden hour"
+                loading="lazy"
+              />
+              <span class="package-card__badge">Best Seller</span>
+            </div>
+            <div class="package-card__body">
+              <p class="package-card__location">📍 Maldives</p>
+              <h3 class="package-card__title">Maldives Overwater Retreat</h3>
+              <div class="package-card__meta">
+                <span>✈️ All-Inclusive</span>
+                <span>🌙 7 nights</span>
+              </div>
+              <div class="star-rating">
+                <div class="stars" aria-label="5 star rating">★★★★★</div>
+                <span class="star-rating__count">(342 reviews)</span>
+              </div>
+              <div class="package-card__footer">
+                <div class="package-card__price">
+                  <span class="package-card__price-from">From</span>
+                  <span class="package-card__price-amount">£1,899</span>
+                  <span class="package-card__price-pp">per person</span>
+                </div>
+                <a href="maldives.html" class="btn btn-primary">View →</a>
+              </div>
+            </div>
+          </article>
+ 
+          <!-- Package 2: Santorini -->
+          <article class="package-card" aria-label="Santorini Sunset Escape package">
+            <div class="package-card__image">
+              <img
+                src="santorini.jpg"
+                alt="Iconic white-domed buildings overlooking the Aegean Sea in Santorini"
+                loading="lazy"
+              />
+              <span class="package-card__badge package-card__badge--gold">New</span>
+            </div>
+            <div class="package-card__body">
+              <p class="package-card__location">📍 Santorini, Greece</p>
+              <h3 class="package-card__title">Santorini Sunset Escape</h3>
+              <div class="package-card__meta">
+                <span>✈️ B&amp;B</span>
+                <span>🌙 5 nights</span>
+              </div>
+              <div class="star-rating">
+                <div class="stars" aria-label="5 star rating">★★★★★</div>
+                <span class="star-rating__count">(218 reviews)</span>
+              </div>
+              <div class="package-card__footer">
+                <div class="package-card__price">
+                  <span class="package-card__price-from">From</span>
+                  <span class="package-card__price-amount">£849</span>
+                  <span class="package-card__price-pp">per person</span>
+                </div>
+                <a href="packages.html" class="btn btn-primary">View →</a>
+              </div>
+            </div>
+          </article>
+ 
+          <!-- Package 3: Bali -->
+          <article class="package-card" aria-label="Bali Cultural Discovery package">
+            <div class="package-card__image">
+              <img
+                src="bali.jpg"
+                alt="Lush terraced rice paddies in Bali, Indonesia"
+                loading="lazy"
+              />
+              <span class="package-card__badge" style="background:var(--gold);color:var(--navy);">Popular</span>
+            </div>
+            <div class="package-card__body">
+              <p class="package-card__location">📍 Bali, Indonesia</p>
+              <h3 class="package-card__title">Bali Cultural Discovery</h3>
+              <div class="package-card__meta">
+                <span>✈️ Half Board</span>
+                <span>🌙 10 nights</span>
+              </div>
+              <div class="star-rating">
+                <div class="stars" aria-label="4.5 star rating">★★★★☆</div>
+                <span class="star-rating__count">(187 reviews)</span>
+              </div>
+              <div class="package-card__footer">
+                <div class="package-card__price">
+                  <span class="package-card__price-from">From</span>
+                  <span class="package-card__price-amount">£1,199</span>
+                  <span class="package-card__price-pp">per person</span>
+                </div>
+                <a href="packages.html" class="btn btn-primary">View →</a>
+              </div>
+            </div>
+          </article>
+ 
+        </div>
+      </div>
+    </section>
+ 
+ 
+    <!-- DESTINATION SHOWCASE — Wide banner -->
+    <section
+      style="
+        background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        position: relative;
+        padding: var(--space-2xl) 0;
+        color: var(--white);
+        overflow: hidden;
+      "
+      aria-label="Explore the world with Holidae"
+    >
+      <!-- Dark overlay -->
+      <div style="position:absolute; inset:0; background:rgba(13,27,42,0.65);" aria-hidden="true"></div>
+      <div class="container" style="position:relative; z-index:1; text-align:center; max-width:700px;">
+        <p class="section-label" style="color:var(--gold-light);">The World is Waiting</p>
+        <h2 class="section-title" style="color:var(--white); margin-top:0.5rem;">
+          Explore More Than 50 Incredible Destinations
+        </h2>
+        <p style="color:rgba(255,255,255,0.78); font-size:1rem; margin: 1rem auto 2rem; max-width:45ch;">
+          From sun-drenched beaches to vibrant city breaks and mountain adventures —
+          Holidae has the perfect package for every type of traveller.
+        </p>
+        <a href="packages.html" class="btn btn-primary btn-lg">Explore All Destinations</a>
+      </div>
+    </section>
+ 
+ 
+    <!-- TESTIMONIALS -->
+    <section class="section section--cream" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: var(--space-lg);">
+          <p class="section-label">What Travellers Say</p>
+          <h2 class="section-title" id="testimonials-heading">Real Holidays, Real Stories</h2>
+        </div>
+ 
+        <div class="grid-3 reveal-group">
+ 
+          <!-- Testimonial 1 -->
+          <article class="testimonial-card">
+            <p class="testimonial-card__text">
+              "Holidae made the whole process effortless. From picking our package to
+              arriving at our overwater villa in the Maldives — every single detail
+              was perfect. We'll never book any other way."
+            </p>
+            <div class="testimonial-card__author">
+              <img
+                class="testimonial-card__avatar"
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80"
+                alt="Photo of Sarah M."
+                loading="lazy"
+              />
+              <div>
+                <p class="testimonial-card__name">Sarah M.</p>
+                <p class="testimonial-card__trip">✈️ Maldives Retreat</p>
+              </div>
+            </div>
+          </article>
+ 
+          <!-- Testimonial 2 -->
+          <article class="testimonial-card">
+            <p class="testimonial-card__text">
+              "The price matched what was advertised and the hotel was even better
+              than the photos. Customer support sorted a last-minute change with
+              zero fuss. Absolutely outstanding service."
+            </p>
+            <div class="testimonial-card__author">
+              <img
+                class="testimonial-card__avatar"
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80"
+                alt="Photo of James T."
+                loading="lazy"
+              />
+              <div>
+                <p class="testimonial-card__name">James T.</p>
+                <p class="testimonial-card__trip">✈️ Santorini Escape</p>
+              </div>
+            </div>
+          </article>
+ 
+          <!-- Testimonial 3 -->
+          <article class="testimonial-card">
+            <p class="testimonial-card__text">
+              "Two weeks in Bali with our family — kids absolutely loved it and so
+              did we. The guided temple tours were a highlight. Great value for money
+              and would 100% book with Holidae again."
+            </p>
+            <div class="testimonial-card__author">
+              <img
+                class="testimonial-card__avatar"
+                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80"
+                alt="Photo of Emma R."
+                loading="lazy"
+              />
+              <div>
+                <p class="testimonial-card__name">Emma R.</p>
+                <p class="testimonial-card__trip">✈️ Bali Discovery</p>
+              </div>
+            </div>
+          </article>
+ 
+        </div>
+      </div>
+    </section>
+ 
+  </main>
+ 
+  <!-- Shared JavaScript (navigation, animations, forms) -->
+  <script src="main.js"></script>
+ 
+</body>
 </html>
+ 
+
